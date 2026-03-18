@@ -492,16 +492,18 @@ local function SetHumanoidStates()
 end
 
 local function ApplyCharacter()
-	if not SetPlayerChar then
-		return
-	end
+    if not SetPlayerChar then
+        return
+    end
 
-	if NoBodyNearby then
-		repeat task.wait() until not FindFirstChild(Character, "HumanoidRootPart")
-	end
+    if NoBodyNearby then
+        repeat task.wait() until not FindFirstChild(Character, "HumanoidRootPart")
+    end
 
-	task.wait(WaitTime * 2)
-	Player.Character = FakeRig
+    task.wait(WaitTime * 2)
+    pcall(function()
+        Player.Character = FakeRig
+    end)
 end
 
 -- // Ownership
