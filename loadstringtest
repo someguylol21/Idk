@@ -1,0 +1,5 @@
+print("hello")
+local func = function()
+    print("hi")
+end
+return func
